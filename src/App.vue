@@ -1,5 +1,7 @@
 <template>
   <div id="app">
+    <!--    v-full-screen-->
+    <span v-full-screen class="full-screen">全屏</span>
     <NavCom></NavCom>
     <router-view />
   </div>
@@ -33,7 +35,19 @@ body {
   border: 1px solid red;
   min-height: 100vh;
 }
-
+.full-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  font-size: 12px;
+  text-align: center;
+  background: deeppink;
+  position: fixed;
+  right: 20px;
+  cursor: pointer;
+}
 nav {
   padding: 30px;
 
