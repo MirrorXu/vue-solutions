@@ -2,10 +2,25 @@
   <div>
     <h1>Svg 图标</h1>
     <div class="icon-box">
-      <div v-for="icon in icons" :key="icon.name" class="icon-box-item">
+      <div
+        v-for="(icon, index) in icons"
+        :key="icon.name"
+        class="icon-box-item"
+      >
         <svg-icon :name="icon.name" class="icon"></svg-icon>
-        <div class="icon-name">{{ icon.name }}</div>
-        <div class="icon-id">{{ icon.id }}</div>
+        <div class="icon-name" v-copy="index">{{ index }}</div>
+        <div
+          v-copy:click="{ value: icon.name, callback: copyCb }"
+          class="icon-name"
+        >
+          {{ icon.name }}
+        </div>
+        <div
+          v-copy:dblclick="{ value: icon.id, callback: copyCb }"
+          class="icon-id"
+        >
+          {{ icon.id }}
+        </div>
       </div>
     </div>
   </div>
@@ -24,8 +39,17 @@ export default {
       }),
     };
   },
+  methods: {
+    copyCb(e) {
+      if (e.value) {
+        console.log("copy success", e.value);
+      } else {
+        throw e;
+      }
+    },
+  },
   mounted() {
-    console.log("mounted:", this.icons);
+    // console.log("mounted:", this.icons);
   },
 };
 </script>
@@ -49,10 +73,20 @@ export default {
     .icon-name {
       margin-top: 10px;
       user-select: none;
+      cursor: pointer;
+      &:hover {
+        color: #cb9510;
+        transform: scale(1.02);
+      }
     }
     .icon-id {
       margin-top: 10px;
       user-select: none;
+      cursor: pointer;
+      &:hover {
+        color: #cb9510;
+        transform: scale(1.02);
+      }
     }
   }
 }

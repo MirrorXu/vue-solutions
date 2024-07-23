@@ -18,7 +18,7 @@ export default {
     return { NavTree };
   },
   mounted() {
-    console.log(this.$route);
+    // console.log(this.$route);
   },
   methods: {
     clickNav(nav) {

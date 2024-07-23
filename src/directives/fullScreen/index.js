@@ -8,8 +8,8 @@ function handleClick() {
   screenfull.toggle();
 }
 export default {
-  bind(el, binding) {
-    console.log("binding:", binding);
+  bind(el) {
+    // console.log("binding:", binding);
     // if (binding.modifiers.icon) {
     //   if (el.hasIcon) return;
     //   // 创建全屏图标

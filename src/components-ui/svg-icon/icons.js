@@ -10,15 +10,15 @@ function importAll() {
   req.keys().forEach(req);
   // console.log(req);
   // console.log(Object.keys(req));
-  console.log(req.keys());
+  // console.log(req.keys());
   svgFiles = req.keys();
 }
 importAll();
 
-console.log("svgFiles:", svgFiles);
+// console.log("svgFiles:", svgFiles);
 function pathToName(path) {
   const fileName = path.replace(/(.*\/)*([^.]+).*/gi, "$2");
-  console.log("###", fileName);
+  // console.log("###", fileName);
   return fileName;
 }
 
