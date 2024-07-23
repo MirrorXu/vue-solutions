@@ -1,3 +1,5 @@
+//  拷贝实现的原理，参考：https://www.ruanyifeng.com/blog/2021/01/clipboard-api.html
+
 import * as clipboard from "clipboard-polyfill";
 import {
   isPrimary,
