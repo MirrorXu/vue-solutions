@@ -1,8 +1,12 @@
 <template>
   <div id="app">
     <!--    v-full-screen-->
-    <span v-full-screen class="full-screen">全屏</span>
-    <NavCom></NavCom>
+    <div class="navbar">
+      <NavCom></NavCom>
+      <span v-full-screen class="full-screen">
+        <svg-icon name="fullscreen" class="icon" />
+      </span>
+    </div>
     <router-view />
   </div>
 </template>
@@ -35,29 +39,24 @@ body {
   border: 1px solid red;
   min-height: 100vh;
 }
+
 .full-screen {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30px;
-  height: 30px;
-  font-size: 12px;
   text-align: center;
-  background: deeppink;
-  position: fixed;
-  right: 20px;
+  //background: #f1b6d6;
   cursor: pointer;
-}
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+  color: #1058a1;
+  margin-right: 20px;
+  .icon {
+    height: 20px !important;
+    width: 20px !important;
   }
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 </style>

@@ -42,7 +42,7 @@ export default {
 
   a {
     display: flex;
-    padding: 10px;
+    padding: 5px 10px;
     font-weight: bold;
     color: #2c3e50;
     cursor: default;

@@ -25,6 +25,15 @@ const routes = [
     },
   },
   {
+    path: "/icons",
+    name: "icons",
+    component: () =>
+      import(/* webpackChunkName: "icons" */ "../views/IconsView.vue"),
+    meta: {
+      title: "图标库",
+    },
+  },
+  {
     name: "playground",
     path: "/playground",
     component: () =>
