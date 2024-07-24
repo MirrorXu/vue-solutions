@@ -34,6 +34,15 @@ const routes = [
     },
   },
   {
+    name: "filer",
+    path: "/filter",
+    component: () =>
+      import(/* webpackChunkName: "filter" */ "../views/FiltersView.vue"),
+    meta: {
+      title: "Vue 过滤器",
+    },
+  },
+  {
     name: "playground",
     path: "/playground",
     component: () =>

@@ -24,6 +24,9 @@ Vue.use(myUi, myUiOptions);
 // 注册指令
 import myDirectives from "./directives";
 Vue.use(myDirectives);
+// 注册过滤器
+import myFilters from "./filters";
+Vue.use(myFilters);
 
 new Vue({
   router,

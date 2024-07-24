@@ -13,6 +13,7 @@
   "dependencies": {
     "clipboard-polyfill": "^4.1.0",
     "core-js": "^3.8.3",
+    "dayjs": "^1.11.12",
     "vue": "^2.6.14",
     "vue-router": "^3.5.1",
     "vuex": "^3.6.2"
