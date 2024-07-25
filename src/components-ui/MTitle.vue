@@ -3,10 +3,8 @@ export default {
   name: "MTitle",
   props: {
     level: {
-      type: Number,
-      default: () => {
-        return 1;
-      },
+      type: [String, Number],
+      default: 1,
       validator: (value) => {
         return [1, 2, 3, 4, 5, 6].some((v) => v == value);
       },
