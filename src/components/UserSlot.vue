@@ -1,4 +1,3 @@
-<!--dfaf -->
 <script>
 export default {
   name: "UserSlot",
