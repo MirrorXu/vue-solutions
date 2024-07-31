@@ -3,6 +3,9 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 
+// 引入flex样式类名
+import "./assets/quickFlex.scss";
+
 // // 定义一个加载目录的函数
 // const requireAll = (requireContext) =>
 //   requireContext.keys().map(requireContext);
