@@ -1,8 +1,6 @@
 <template>
   <div>
-    <MTitle>transition</MTitle>
-    <MTitle level="2">css transform</MTitle>
-
+    <MTitle>transition 组件</MTitle>
     <MTitle level="2">
       css 变形 transform属性: [translate | rotate | scale | skew ]
     </MTitle>
@@ -25,7 +23,9 @@
         :ref="refId"
         @click="doTransition"
         class="box flex flex-center transitionAll"
-      ></div>
+      >
+        click to change style
+      </div>
     </div>
   </div>
 </template>
@@ -105,18 +105,19 @@ $baseLength: 80px;
 }
 .transition {
   .box {
-    background-color: #cb9510;
+    background-color: #f1edce;
+    transition: all 2s ease;
 
     &:nth-child(1) {
+      background: darkcyan;
       &:hover {
-        background-color: deeppink;
+        background-color: #ea0c47;
         transform: scale(1.5);
       }
-      transition: transform 1s ease, background-color 2s ease 0.3s;
+    }
+    &:nth-child(2) {
+      background: #f1b6d6;
     }
   }
-}
-.transitionAll {
-  transition: all 2s ease;
 }
 </style>

@@ -17,6 +17,7 @@ export default {
         fontSize: `${12 + 10 / level}px`,
         padding: `${(6 / level) * 2}px 0px`,
         "border-bottom": `1px solid #ccc`,
+        "text-align": level == 1 ? "center" : "left",
       };
     },
   },
