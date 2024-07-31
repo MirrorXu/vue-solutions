@@ -53,6 +53,47 @@ const routes = [
       title: "训练场",
     },
   },
+  {
+    name: "slot",
+    path: "/slot",
+    component: () =>
+      import(/* webpackChunkName: "slot" */ "../views/SlotView.vue"),
+    meta: {
+      title: "slot插槽",
+    },
+  },
+  {
+    name: "buildInComponents",
+    path: "/buildInComponents",
+    component: () =>
+      import(
+        /* webpackChunkName: "buildInComponents" */ "../views/BuildInComponentView/index.vue"
+      ),
+    redirect: "/buildInComponents/transition",
+    children: [
+      {
+        path: "transition",
+        name: "transition",
+        component: () =>
+          import(
+            /* webpackChunkName: "transition" */ "../views/BuildInComponentView/TransitionView.vue"
+          ),
+        meta: { title: "transition组件" },
+      },
+      {
+        path: "keepAlive",
+        name: "keepAlive",
+        component: () =>
+          import(
+            /* webpackChunkName: "keepAlive" */ "../views/BuildInComponentView/KeepAliveView.vue"
+          ),
+        meta: { title: "keepAlive组件" },
+      },
+    ],
+    meta: {
+      title: "内置组件",
+    },
+  },
 ];
 
 export default routes;

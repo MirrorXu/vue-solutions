@@ -3,7 +3,7 @@
     <div class="nav-item" v-for="nav in NavTree" :key="nav.name">
       <a
         @click.prevent="clickNav(nav)"
-        :class="{ active: $route.name === nav.name }"
+        :class="{ active: $route.fullPath.includes(nav.path) }"
         >{{ nav.title }}
       </a>
     </div>
