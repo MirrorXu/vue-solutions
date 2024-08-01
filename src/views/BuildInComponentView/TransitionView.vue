@@ -27,14 +27,21 @@
         click to change style
       </div>
     </div>
+    <MPanel title="使用 vue 内置的 transition 组件">
+      <div class="transitionBox">
+        <transition>
+          <span>hello</span>
+        </transition>
+      </div>
+    </MPanel>
   </div>
 </template>
 <script>
 import { randomNumber } from "@/helpers/random";
-
+import MPanel from "@/components-ui/MPanel.vue";
 export default {
   name: "TransitionView",
-  components: {},
+  components: { MPanel },
   data() {
     return {
       refId: "xxx",
