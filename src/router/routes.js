@@ -1,5 +1,4 @@
 import HomeView from "../views/HomeView.vue";
-
 const routes = [
   {
     path: "/",
@@ -94,6 +93,42 @@ const routes = [
       title: "内置组件",
     },
   },
+  {
+    name: "element-ui",
+    path: "/element-ui",
+    component: () =>
+      import(
+        /* webpackChunkName: "element-ui" */ "../views/ElementUI/Layout.vue"
+      ),
+    meta: {
+      title: "Element UI",
+    },
+    redirect: { name: "element-ui-base" },
+    children: [
+      {
+        path: "element-ui-config",
+        name: "elementUI-config",
+        component: () =>
+          import(
+            /* webpackChunkName: "element-ui" */ "../views/ElementUI/Config.vue"
+          ),
+        meta: {
+          title: "配置",
+        },
+      },
+      {
+        path: "element-ui-base",
+        name: "element-ui-base",
+        component: () =>
+          import(
+            /* webpackChunkName: "element-ui" */ "../views/ElementUI/Base.vue"
+          ),
+        meta: {
+          title: "基础使用",
+        },
+      },
+    ],
+  },
 ];
 
 export default routes;
@@ -106,3 +141,11 @@ export const NavTree = routes
     item.title = item?.meta?.title || item.name;
     return item;
   });
+
+export const ElementUIRoutes = NavTree.find(
+  (item) => item.name === "element-ui"
+)?.children.map((route) => {
+  route.meta = route.meta || {};
+  route.meta.title = route.meta.title || route.name;
+  return route;
+});

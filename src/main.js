@@ -2,6 +2,12 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
+import ElementUI from "element-ui";
+import "element-ui/lib/theme-chalk/index.css";
+Vue.use(ElementUI);
+
+import mlog from "mirror-log";
+window.mlog = mlog;
 
 // 引入flex样式类名
 import "./assets/quickFlex.scss";

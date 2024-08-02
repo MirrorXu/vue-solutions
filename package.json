@@ -14,6 +14,7 @@
     "clipboard-polyfill": "^4.1.0",
     "core-js": "^3.8.3",
     "dayjs": "^1.11.12",
+    "element-ui": "^2.15.14",
     "vue": "^2.6.14",
     "vue-router": "^3.5.1",
     "vuex": "^3.6.2"
@@ -36,6 +37,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.0.3",
     "jest": "^27.0.5",
+    "mirror-log": "^1.0.1",
     "prettier": "^2.4.1",
     "sass": "^1.32.7",
     "sass-loader": "^12.0.0",
