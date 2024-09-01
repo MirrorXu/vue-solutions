@@ -5,6 +5,7 @@ module.exports = {
   },
   globals: {
     mlog: true,
+    URL: true,
   },
   extends: [
     "plugin:vue/essential",
