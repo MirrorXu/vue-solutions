@@ -3,7 +3,7 @@ const defaults = {
   max: 5,
   accept: "",
 };
-export function selectFile(config) {
+export function selectFiles(config) {
   config = Object.assign({}, defaults, config || {});
   const { multiple, accept } = config;
   const input = document.createElement("input");
@@ -16,7 +16,7 @@ export function selectFile(config) {
   const promise = new Promise((resolve, reject) => {
     const eventHandler = (e) => {
       if (e?.target?.files) {
-        resolve(e.target.files);
+        resolve(Array.from(e.target.files));
       } else {
         reject(e);
       }

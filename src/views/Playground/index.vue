@@ -15,13 +15,17 @@
         </div>
       </div>
     </div>
+    <FileCom />
   </div>
 </template>
 <script>
-import { selectFile } from "@/js-test/selectFile";
-
+import { selectFiles } from "@/helpers/file";
+import FileCom from "@/components/File.vue";
 export default {
   name: "Playground",
+  components: {
+    FileCom,
+  },
   data() {
     return {
       userData: {
@@ -40,13 +44,14 @@ export default {
       this.$forceUpdate();
     },
     selectFiles() {
-      selectFile({ multiple: true })
+      selectFiles({ multiple: true })
         .then((files) => {
           console.log(files);
 
           files = Array.from(files);
           this.selectedFiles = files.map((file) => {
             file.url = URL.createObjectURL(file);
+            URL.revokeObjectURL(file.URL);
             return file;
           });
         })
