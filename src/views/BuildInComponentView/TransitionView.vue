@@ -29,9 +29,14 @@
     </div>
     <MPanel title="使用 vue 内置的 transition 组件">
       <div class="transitionBox">
-        <transition>
-          <span>hello</span>
-        </transition>
+        <div>
+          <el-button @click="show = !show" size="mini" type="primary">
+            点击查看效果
+          </el-button>
+          <transition name="fade" appear>
+            <span style="margin-left: 30px" v-if="show">hello</span>
+          </transition>
+        </div>
       </div>
     </MPanel>
   </div>
@@ -45,6 +50,7 @@ export default {
   data() {
     return {
       refId: "xxx",
+      show: true,
     };
   },
   methods: {
@@ -64,7 +70,19 @@ export default {
   },
 };
 </script>
-
+<style lang="scss">
+.fade-enter {
+  background: greenyellow;
+  transform: translateX(10px);
+}
+.fade-enter-active {
+  transition: all 1.5s linear;
+}
+.fade-enter-to {
+  background: red;
+  //transform: translateX(0px);
+}
+</style>
 <style scoped lang="scss">
 $baseLength: 80px;
 .box {

@@ -3,6 +3,7 @@ const defaults = {
   max: 5,
   accept: "",
 };
+
 export function selectFiles(config) {
   config = Object.assign({}, defaults, config || {});
   const { multiple, accept } = config;
@@ -11,10 +12,11 @@ export function selectFiles(config) {
   input.style.display = "none";
   multiple && (input.multiple = multiple);
   accept && (input.accept = accept);
-  document.body.appendChild(input);
 
+  // document.body.appendChild(input);
+  let eventHandler;
   const promise = new Promise((resolve, reject) => {
-    const eventHandler = (e) => {
+    eventHandler = (e) => {
       if (e?.target?.files) {
         resolve(Array.from(e.target.files));
       } else {
@@ -27,6 +29,7 @@ export function selectFiles(config) {
 
   return promise.then(
     (files) => {
+      input.removeEventListener(eventHandler);
       document.body.removeChild(input);
       return files;
     },
@@ -36,3 +39,16 @@ export function selectFiles(config) {
     }
   );
 }
+
+export const download = (url, fileName) => {
+  console.log(url);
+  const a = document.createElement("a");
+  try {
+    a.href = url;
+    a.download = fileName || "file";
+    a.click();
+  } catch (e) {
+    e.message = "下载失败";
+    throw e;
+  }
+};
